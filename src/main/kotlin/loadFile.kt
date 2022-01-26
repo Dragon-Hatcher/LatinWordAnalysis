@@ -1,0 +1,1 @@
+fun loadFile(name: String) = object{}::class.java.getResource(name)!!.readText()
