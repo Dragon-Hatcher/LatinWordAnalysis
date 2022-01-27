@@ -1,0 +1,4 @@
+package wikidata
+
+class Word {
+}
