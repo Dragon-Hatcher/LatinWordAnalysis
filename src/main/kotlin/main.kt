@@ -65,21 +65,25 @@ fun main() {
 //    }
 //
 //    val fiveLetters = allWords.filter { it.length == 5 }.toSet().toList().sorted()
-//    File("all-5-letter-words3.txt").printWriter().use { out ->
-//        words.forEach { out.println(it) }
+//    File("text3.txt").printWriter().use { out ->
+//        out.print(text)
 //    }
 
     val words1Text = loadFile("text/text1.txt")
     val words2Text = loadFile("text/text2.txt")
+    val words3Text = loadFile("text/text3.txt")
     val allWords1Text = loadFile("all-5-letter-words.txt")
     val allWords3Text = loadFile("all-5-letter-words3.txt")
 
     val words1Words = wordsIn(words1Text).toSet()
     val words2Words = wordsIn(words2Text).toSet()
+    val words3Words = wordsIn(words3Text).toSet()
     val allWords1 = wordsIn(allWords1Text).toSet()
     val allWords3 = wordsIn(allWords3Text).toSet()
-    println((words1Words + words2Words) - allWords1)
-    println((words1Words + words2Words) - allWords3)
+    val notIn1 = (words1Words + words2Words) - allWords3
+//    println((words1Words + words2Words + words3Text) - allWords1)
+    println((words1Words + words2Words + words3Words) - allWords3 - notIn1)
+    println(words3Words - (words1Words + words2Words))
 
 
 //    val wWWords = loadFile("wwwords.json")
